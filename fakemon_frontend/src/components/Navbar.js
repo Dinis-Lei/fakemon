@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { Link } from 'react-router-dom';
@@ -14,9 +13,9 @@ import { useLocation } from 'react-router-dom';
 export default function ButtonAppBar() {
   
   const tabInfo = [
-    {"label": <Typography>Model</Typography>, "link": "/"},
-    {"label": <Typography>Info</Typography>, "link": "/list"},
-    {"label": <Typography>About</Typography>, "link": "/add"},
+    {"label": <Typography>Main Page</Typography>, "link": "/"},
+    {"label": <Typography>List All</Typography>, "link": "/list"},
+    {"label": <Typography>Add Fakemon</Typography>, "link": "/add"},
   ]
   
   const pathname = useLocation().pathname;
