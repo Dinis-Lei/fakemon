@@ -4,14 +4,19 @@ import { Box, Grid } from '@mui/material';
 import Navbar from './components/Navbar';
 import FrontPage from './pages/FrontPage';
 import ListPage from './pages/ListPage';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Box>
-      <Navbar />
-      {/* <FrontPage /> */}
-      <ListPage />
-    </Box>
+    <BrowserRouter>
+      <Box>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<FrontPage />} />
+          <Route path="/list" element={<ListPage />} />
+        </Routes>
+      </Box>
+    </BrowserRouter>
   );
 }
 

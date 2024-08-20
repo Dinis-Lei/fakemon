@@ -1,5 +1,5 @@
 import logo from '../logo.svg';
-import { Box, Grid, Card, CardMedia, CardContent } from '@mui/material';
+import { Box, Grid, Card, CardMedia, CardContent, Toolbar } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 
@@ -33,38 +33,39 @@ function ListPage() {
   
   
     return (
-    <Box 
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        margin={5}
-        paddingLeft={5}
-    >
-        <Grid container spacing={5}>
-            {fakemonList.map((fakemon, index) => {
+        <>
+            <Toolbar />
+            <Box 
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                margin={5}
+                paddingLeft={5}
+            >
+                
+                <Grid container spacing={5}>
+                    {fakemonList.map((fakemon, index) => {
 
-                return (
-                    <Grid item sx={3}>
-                        <Card sx={{width: 400, height: 500 }} key={index}>
-                            <CardMedia 
-                                component="img" 
-                                image={fakemon.image}
-                                sx={{ width: 400 }}
-                            />
-                            <CardContent>
-                                <h1>{fakemon.name}</h1>
-                                <p>Type: {fakemon.type1}</p>          
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                );
-
-            })}
-        </Grid>
-      
-
-    </Box>
-  );
+                        return (
+                            <Grid item sx={3}>
+                                <Card sx={{width: 400, height: 500 }} key={index}>
+                                    <CardMedia 
+                                        component="img" 
+                                        image={fakemon.image}
+                                        sx={{ width: 400 }}
+                                    />
+                                    <CardContent>
+                                        <h1>{fakemon.name}</h1>
+                                        <p>Type: {fakemon.type1}</p>          
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        );
+                    })}
+                </Grid>
+            </Box>
+        </>
+    );
 }
 
 export default ListPage;
