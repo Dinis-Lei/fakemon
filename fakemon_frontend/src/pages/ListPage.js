@@ -1,8 +1,32 @@
-import { Box, Grid, Card, CardMedia, CardContent, Toolbar } from '@mui/material';
+import { Box, Grid, Card, CardMedia, CardContent, Toolbar, MenuItem, TextField } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 
 function ListPage() {
+
+    const types = [
+        "None",
+        "Normal",
+        "Fire",
+        "Water",
+        "Electric",
+        "Grass",
+        "Ice",
+        "Fighting",
+        "Poison",
+        "Ground",
+        "Flying",
+        "Psychic",
+        "Bug",
+        "Rock",
+        "Ghost",
+        "Dragon",
+        "Dark",
+        "Steel",
+        "Fairy",
+    ] 
+
+    const [type, setType] = useState("None");
 
     const [fakemonList, setFakemonList] = useState([]);
 
@@ -14,7 +38,11 @@ function ListPage() {
                 'Access-Control-Allow-Origin': '*'
             }
         };
-        const url = 'http://localhost:8000/fakemon/list_all';
+        let url = 'http://localhost:8000/fakemon/list_all';
+        if (type !== "None") {
+            url += `?type=${type}`;
+        }
+
         console.log(url);
         fetch(url, options)
             .then(response => response.json())
@@ -28,7 +56,7 @@ function ListPage() {
     useEffect(() => {
         getFakeMon();
         console.log(fakemonList);
-    }, []);
+    }, [type]);
   
   
     return (
@@ -42,11 +70,30 @@ function ListPage() {
                 paddingLeft={5}
             >
                 
+
                 <Grid container spacing={5}>
+                    <Grid item xs={12}>
+                    <TextField 
+                                id="type" 
+                                label="Type" 
+                                variant="outlined" 
+                                select
+                                defaultValue="None"
+                                onChange={(event) => {
+                                    setType(event.target.value);
+                                }}
+                            >
+                                {types.map((type, index) => {
+                                    return (
+                                        <MenuItem key={index} value={type}>{type}</MenuItem>
+                                    )
+                                })}
+                            </TextField>
+                    </Grid>
                     {fakemonList.map((fakemon, index) => {
 
                         return (
-                            <Grid item sx={3}>
+                            <Grid item xs={3}>
                                 <Card sx={{width: 400, height: 550 }} key={index}>
                                     <CardMedia 
                                         component="img" 
