@@ -102,7 +102,7 @@ function ListPage() {
                                     />
                                     <CardContent>
                                         <h1>{fakemon.name}</h1>
-                                        <p>Type: {fakemon.type1}</p>          
+                                        <p>Type(s): {fakemon.type1}{fakemon.type2 ? `, ${fakemon.type2}` : ''}</p>          
                                     </CardContent>
                                 </Card>
                             </Grid>
