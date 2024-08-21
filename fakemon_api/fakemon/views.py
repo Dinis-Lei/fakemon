@@ -73,6 +73,7 @@ class ListAll(APIView):
         req_get = request.GET
         _type = req_get.get('type')
         print(_type)
+        print(req_get)
         query = Q()
 
 

@@ -1,5 +1,5 @@
-import { Box, Card, CardMedia, CardContent, Toolbar, Button, CardHeader, TextField, MenuItem, Grid } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { Box, Card, CardContent, Toolbar, Button, CardHeader, TextField, MenuItem, Grid } from '@mui/material';
+import { useState } from 'react';
 
 function AddPage() {
 
