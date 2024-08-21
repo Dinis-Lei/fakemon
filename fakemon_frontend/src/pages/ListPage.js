@@ -1,4 +1,3 @@
-import logo from '../logo.svg';
 import { Box, Grid, Card, CardMedia, CardContent, Toolbar } from '@mui/material';
 import { useEffect, useState } from 'react';
 
@@ -48,11 +47,11 @@ function ListPage() {
 
                         return (
                             <Grid item sx={3}>
-                                <Card sx={{width: 400, height: 500 }} key={index}>
+                                <Card sx={{width: 400, height: 550 }} key={index}>
                                     <CardMedia 
                                         component="img" 
                                         image={fakemon.image}
-                                        sx={{ width: 400 }}
+                                        sx={{ width: 400, maxHeight: 400 }}
                                     />
                                     <CardContent>
                                         <h1>{fakemon.name}</h1>

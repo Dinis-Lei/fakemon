@@ -1,4 +1,3 @@
-import logo from '../logo.svg';
 import { Box, Card, CardMedia, CardContent, Toolbar, Button } from '@mui/material';
 import { useEffect, useState } from 'react';
 
