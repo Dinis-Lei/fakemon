@@ -27,8 +27,6 @@ class Fakemon(models.Model):
     
     name = models.CharField(max_length=100)
     description = models.TextField()
-    height = models.FloatField(default=0)
-    weight = models.FloatField(default=0)
     image = models.URLField()
     type1 = models.CharField(max_length=100, choices=Types.choices)
     type2 = models.CharField(max_length=100, choices=Types.choices, blank=True)
